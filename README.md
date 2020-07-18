@@ -12,8 +12,7 @@ Windows and MAC
 4. Generate package.json: open “cypress folder” in CMD, and run “npm init”
 5. Install cypress: visit doc.cypress.io
 6. Download visual code editor
-7. Open BundleTest.Js file attached.
-
+7. Open BundleTest.Js file attached.(Please input the location where the file is on your device from the code)
 
 Installing
  npm install

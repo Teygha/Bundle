@@ -1,0 +1,276 @@
+{
+	"id": "b1e1f0a5-8d49-458b-9245-ef792debee89",
+	"name": "BundleAPI",
+	"timestamp": "2020-07-18T17:18:56.436Z",
+	"collection_id": "6bb41186-a381-441e-bc5b-49c1072e27dd",
+	"folder_id": 0,
+	"environment_id": "b587823b-7dae-4406-83cb-5415de2169fc",
+	"totalPass": 18,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "3699357b-c8b4-4686-b039-1119ad526c6e",
+			"name": "Get Company details from a Valid Invoice",
+			"url": "https://csvdemomockappp.bundlewallet.com/invoice//9/company?companyName=Google",
+			"time": 460,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 1000ms": true,
+				"Message matches": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Message matches": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				460
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 1000ms": true,
+					"Message matches": true
+				}
+			]
+		},
+		{
+			"id": "7c03aa1a-b2c1-4ed3-bd74-a00cac1236de",
+			"name": "Get Invoice Parsing Result by using a Valid ID",
+			"url": "https://csvdemomockappp.bundlewallet.com/invoice//9",
+			"time": 375,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Message matches": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Message matches": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				375
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Message matches": true
+				}
+			]
+		},
+		{
+			"id": "35a75d86-3865-44a7-a8f1-2ddd817ee56c",
+			"name": "Parse a valid CSV file content",
+			"url": "https://csvdemomockappp.bundlewallet.com/invoice//parse",
+			"time": 223,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Message matches": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Message matches": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				223
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Message matches": true
+				}
+			]
+		},
+		{
+			"id": "a3dbc028-0c0c-44de-a58c-7fda07e6cdb1",
+			"name": "Get Company details from using a Wrong Invoice",
+			"url": "https://csvdemomockappp.bundlewallet.com/invoice//9%20/company?companyName=Google",
+			"time": 223,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Response time is less than 500ms": true,
+				"Message matches": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Message matches": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				223
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Response time is less than 500ms": true,
+					"Message matches": true
+				}
+			]
+		},
+		{
+			"id": "acd731dc-da94-4434-b0a2-66624077cc1b",
+			"name": "Get Invoice Parsing Result by using wrong ID",
+			"url": "https://csvdemomockappp.bundlewallet.com/invoice//9",
+			"time": 486,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true,
+				"Message matches": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Message matches": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				486
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true,
+					"Message matches": true
+				}
+			]
+		},
+		{
+			"id": "7a9e1e14-0d39-40e8-bce3-7d9a721c77ef",
+			"name": "Parse Wrong CSV file content",
+			"url": "https://csvdemomockappp.bundlewallet.com/invoice//parse",
+			"time": 225,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response time is less than 1000ms": true,
+				"Message matches": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Message matches": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				225
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response time is less than 1000ms": true,
+					"Message matches": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1992,
+	"collection": {
+		"requests": [
+			{
+				"id": "3699357b-c8b4-4686-b039-1119ad526c6e",
+				"method": "GET"
+			},
+			{
+				"id": "7c03aa1a-b2c1-4ed3-bd74-a00cac1236de",
+				"method": "GET"
+			},
+			{
+				"id": "35a75d86-3865-44a7-a8f1-2ddd817ee56c",
+				"method": "POST"
+			},
+			{
+				"id": "a3dbc028-0c0c-44de-a58c-7fda07e6cdb1",
+				"method": "GET"
+			},
+			{
+				"id": "acd731dc-da94-4434-b0a2-66624077cc1b",
+				"method": "GET"
+			},
+			{
+				"id": "7a9e1e14-0d39-40e8-bce3-7d9a721c77ef",
+				"method": "POST"
+			}
+		]
+	}
+}

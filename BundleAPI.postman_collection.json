@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "132f921c-27bb-450c-a8ba-323fdc3e78e3",
+		"name": "BundleAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Company details from a Valid Invoice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b11854ae-5cf3-412c-af1c-5f3a9e320060",
+						"exec": [
+							"//Extract details",
+							"var responseJson = JSON.parse(responseBody);",
+							"var Success_State = responseJson.success;",
+							"",
+							"//Check response code",
+							"pm.test(\"Status code is 404\", function () { ",
+							"    pm.response.to.have.status(404); });",
+							"",
+							"//Check response time",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Message matches\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"company\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/{{InvoiceID}}/company?companyName=Google",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"{{InvoiceID}}",
+						"company"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "Google"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Invoice Parsing Result by using a Valid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b11854ae-5cf3-412c-af1c-5f3a9e320060",
+						"exec": [
+							"//Extract details",
+							"var responseJson = JSON.parse(responseBody);",
+							"var Success_State = responseJson.success;",
+							"",
+							"//Check response code",
+							"pm.test(\"Status code is 200\", function () { ",
+							"    pm.response.to.have.status(200); });",
+							"",
+							"//Check response time",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Message matches\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"companies\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/{{InvoiceID}}",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"{{InvoiceID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parse a valid CSV file content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "783be882-a7d5-4164-befa-7ff152d1d825",
+						"exec": [
+							"//Extract details",
+							"var responseJson = JSON.parse(responseBody);",
+							"var Success_State = responseJson.success;",
+							"",
+							"//Check response code",
+							"pm.test(\"Status code is 200\", function () { ",
+							"    pm.response.to.have.status(200); });",
+							"",
+							"//Check response time",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Message matches\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"companies\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payload\": \"RW1wbG95ZWUgSUQsQmlsbGFibGUgUmF0ZSAocGVyIGhvdXIpLFByb2plY3QsRGF0ZSxTdGFydCBUaW1lLEVuZCBUaW1lCjEsMzAwLEdvb2dsZSwyMDE5LTA3LTAxLDA5OjAwLDE3OjAwCjIsMTAwLEZhY2Vib29rLDIwMTktMDctMDEsMTE6MDAsMTY6MDA=\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/parse",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"parse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Company details from using a Wrong Invoice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b11854ae-5cf3-412c-af1c-5f3a9e320060",
+						"exec": [
+							"//Extract details",
+							"var responseJson = JSON.parse(responseBody);",
+							"var Success_State = responseJson.success;",
+							"",
+							"//Check response code",
+							"pm.test(\"Status code is 404\", function () { ",
+							"    pm.response.to.have.status(404); });",
+							"",
+							"//Check response time",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"pm.test(\"Message matches\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"company\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/{{Wrong_InvoiceID}}/company?companyName=Google",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"{{Wrong_InvoiceID}}",
+						"company"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "Google"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Invoice Parsing Result by using wrong ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b11854ae-5cf3-412c-af1c-5f3a9e320060",
+						"exec": [
+							"//Extract details",
+							"var responseJson = JSON.parse(responseBody);",
+							"var Success_State = responseJson.success;",
+							"",
+							"//Check response code",
+							"pm.test(\"Status code is 200\", function () { ",
+							"    pm.response.to.have.status(200); });",
+							"",
+							"//Check response time",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Message matches\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"companies\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/{{Wrong_InvoiceID}}",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"{{Wrong_InvoiceID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parse Wrong CSV file content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "783be882-a7d5-4164-befa-7ff152d1d825",
+						"exec": [
+							"//Extract details",
+							"var responseJson = JSON.parse(responseBody);",
+							"var Success_State = responseJson.success;",
+							"",
+							"//Check response code",
+							"pm.test(\"Status code is 400\", function () { ",
+							"    pm.response.to.have.status(400); });",
+							"",
+							"//Check response time",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Message matches\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payload\": \"{{Base64_Wrong}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/parse",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"parse"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
